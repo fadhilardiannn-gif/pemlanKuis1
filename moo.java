@@ -2,17 +2,21 @@ import java.util.*;
 
 public class moo{
     public static void main(String[] args){
+
+        
         Scanner sc = new Scanner(System.in);
 
         String nama;
         while(true){
             nama = sc.nextLine();
             if(nama.matches("[a-zA-Z]+")) break;
+
             System.out.println("Mooo! Nama sapi harus pakai huruf, bukan angka atau simbol!");
         }
 
         int berat;
         while(true){
+
             try{
                 berat = Integer.parseInt(sc.nextLine());
                 if(berat >= 1) break;
@@ -20,6 +24,7 @@ public class moo{
             } catch(Exception e){
                 System.out.println("Sapi astral? Masukkan berat yang valid dulu, bestie!");
             }
+
         }
 
         String layanan;
@@ -27,9 +32,12 @@ public class moo{
             layanan = sc.nextLine();
             if(layanan.equals("spa")|| layanan.equals("potong_kuku") ||layanan.equals("grooming")) break;
             System.out.println("Pilih spa, potong_kuku, atau grooming! Sapi kamu mau dirawat apa, sih?");
+
         }
 
         String kelas;
+
+
         while(true){
             kelas = sc.nextLine();
             if(kelas.equals("reguler") ||kelas.equals("vip")) break;
@@ -37,9 +45,12 @@ public class moo{
         }
 
         double harga = 0;
+
         if(layanan.equals("spa")) harga = 8000;
         else  if(layanan.equals("potong_kuku")) harga = 6000;
         else harga = 10000;
+
+
 
         double biayaDasar = berat * harga;
         double diskon = 0;
